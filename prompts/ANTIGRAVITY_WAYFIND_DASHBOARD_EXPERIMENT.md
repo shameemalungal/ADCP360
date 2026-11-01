@@ -1,0 +1,13 @@
+# Antigravity Prompt: Wayfind-Inspired Dashboard Experiment
+
+Use the attached Wayfind dashboard reference as visual inspiration, and the ADCP 360° Brand Identity Board as the controlling identity. Create an alternative District Coordinator Dashboard that explores the reference's editorial typography, spacious composition, softly coloured panels, restrained gradients, colourful information blocks and strong sectional hierarchy. Adapt this visual language to a government veterinary operations platform, not a financial SaaS landing page.
+
+Preserve the current dashboard. Work on branch `ui-experiment/wayfind-inspired-dashboard`; do not overwrite or delete existing implementation. Inspect the repository and uncommitted changes first; preserve all existing work. Reuse existing stack and components where sensible. Implement only the alternative dashboard.
+
+Use Plus Jakarta Sans and official palette: #0E7D7A, #14B8A6, #84D46B, #3B82F6, #F59E0B, #FCD34D, #F0F9FF, #E2E8F0, #475569. Do not use Wayfind logo/name or unrelated imagery. Keep ADCP 360° logo and identity.
+
+Dashboard sections: District Overview; six KPI cards (Active Campaigns, Total Vaccinations, Pending Completion Reports, Verification Pending, Vaccine Stock Alerts, Near Expiry Items); Campaign Vaccination Progress with campaign selector and species chart; Report Submission Status; Verification Workflow Supervisor → Taluk Coordinator → District Coordinator; Disease Surveillance; Finance & Fund Utilisation (funds, expenditure, bank balance, cash in hand, UC status); Stock & Inventory Alerts; Vehicle Operations (allocations, availability, statutory renewal and maintenance reminders); Pending Actions; Recent Activity. Label all figures as demonstration data. Do not hard-code a universal campaign performance formula.
+
+Keep the existing sidebar and top navigation functional, including multi-role profile menu and Logout. Aim for an enterprise application: balanced information density, clear labels, compact readable charts, disciplined whitespace and practical daily-use interaction. No marketing hero section, no black footer, no large decorative testimonial imagery.
+
+Only perform basic build/render checks. After the small build, report what changed and list exactly what the user should inspect manually: visual style, brand identity, information density, alignment, KPI cards, charts, shell navigation, profile/role menu and responsive layout. Do not run full regression tests. Wait for feedback before proceeding.
