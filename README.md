@@ -3,14 +3,14 @@
 **Integrated Administration & Operations Platform**  
 *Efficient Administration. Enhanced Animal Health Care.*
 
-ADCP 360° is a proposed integrated administration and operations platform for the Animal Disease Control Project, Malappuram, Kerala.
+ADCP 360° is an integrated administration and operations platform being planned for the Animal Disease Control Project, Malappuram, Kerala.
 
 ## Project status
 
-- Requirements baseline: v1.0 consolidated.
-- Architecture: proposed, under review.
-- UI: design exploration; dashboard prototype not yet accepted.
-- Application implementation: not started.
+- Requirements Specification v1.0: consolidated.
+- System architecture: proposed, under review.
+- UI: dashboard design experiments; final direction not yet approved.
+- Application source code: not started.
 - Hosting domain: [adcpmalappuram.in](https://adcpmalappuram.in).
 
 ## Guiding principle
@@ -19,37 +19,39 @@ ADCP 360° is a proposed integrated administration and operations platform for t
 
 ## Repository map
 
-- `docs/requirements/`: requirements specifications and revision history.
+- `docs/requirements/`: requirements specifications.
 - `docs/architecture/`: architecture and technical design.
-- `docs/workflows/`: business workflows and process definitions.
-- `docs/decisions/`: architectural and product decisions.
-- `branding/`: official logo, brand board and visual references.
-- `prompts/`: Antigravity and UI-generation prompts.
-- `project-notes/`: development guidance and project status.
+- `docs/decisions/`: project decisions and development workflow.
+- `branding/`: brand references and asset approval notes.
+- `prompts/`: Stitch and Antigravity prompts.
+- `project-notes/`: project status and repository notes.
 
-Application source directories will be added after the architecture and dashboard design are approved.
+## Key references
 
-## Important development principles
+- [Requirements Specification v1.0 (Markdown)](docs/requirements/ADCP_360_Requirements_Specification_v1.0.md)
+- [System Architecture Baseline v1.0](docs/architecture/SYSTEM_ARCHITECTURE_BASELINE_v1.0.md)
+- [Project Decisions and History](docs/decisions/PROJECT_DECISIONS_AND_HISTORY.md)
+- [Development Workflow](docs/decisions/DEVELOPMENT_WORKFLOW.md)
+- [Full Stitch UI Prompt](prompts/ADCP_360_Stitch_Full_UI_Prompt.txt)
+- [Antigravity District Dashboard Prompt](prompts/ANTIGRAVITY_DISTRICT_DASHBOARD_PROMPT.md)
+- [Wayfind-Inspired Dashboard Experiment](prompts/ANTIGRAVITY_WAYFIND_DASHBOARD_EXPERIMENT.md)
+- [Logo Redesign Experiment](prompts/ADCP_360_LOGO_REDESIGN_EXPERIMENT.md)
+- [Repository Contents and Status](project-notes/REPOSITORY_CONTENTS_AND_STATUS.md)
+
+## Development principles
 
 1. This repository is independent of NCMS and VetRx.
-2. Preserve confirmed business rules and distinguish them from proposed technical choices.
-3. Use versioned requirements changes as new requirements are added.
-4. Build incrementally, with manual UI review after small changes.
-5. Preserve existing work before experimental UI changes. Use branches for reversible experiments.
-6. Run deeper tests for critical business logic, authentication, permissions, finance, inventory and DSC workflows.
+2. Confirmed business rules must be distinguished from proposed technical decisions.
+3. New requirements are added through versioned revisions.
+4. Work in small builds and use manual UI review after each small change.
+5. Preserve existing work before experiments; use branches for reversible UI exploration.
+6. Run deeper tests for critical business logic, authentication, permissions, finance, inventory, imports and DSC workflows.
 7. Never commit secrets, credentials, private keys, DSC PINs, production data or sensitive personal information.
 
 ## Design identity
 
-Use the attached ADCP 360° Brand Identity Board as the current visual reference. The alternative logo and Wayfind-inspired dashboard are experimental directions and are not approved replacements until reviewed.
+The official ADCP 360° Brand Identity Board is the current controlling reference. The alternate logo and Wayfind-inspired dashboard are experiments only and are not approved replacements until reviewed.
 
-## Current baseline
+## Important repository visibility note
 
-See:
-- [Requirements Specification v1.0](docs/requirements/ADCP_360_Requirements_Specification_v1.0.docx)
-- [Full UI prompt](prompts/ADCP_360_Stitch_Full_UI_Prompt.txt)
-- [Antigravity dashboard prompt](prompts/ANTIGRAVITY_DISTRICT_DASHBOARD_PROMPT.md)
-- [Wayfind-inspired dashboard experiment](prompts/ANTIGRAVITY_WAYFIND_DASHBOARD_EXPERIMENT.md)
-- [Development workflow](docs/decisions/DEVELOPMENT_WORKFLOW.md)
-- [Architecture baseline](docs/architecture/SYSTEM_ARCHITECTURE_BASELINE_v1.0.md)
-
+The repository is currently **Public**. Review its visibility before adding confidential source code, real operational records, employee information, credentials or other sensitive data.
