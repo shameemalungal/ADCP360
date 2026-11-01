@@ -1,0 +1,163 @@
+ADCP 360° — COMPLETE STITCH UI GENERATION PROMPT
+Product: Integrated Administration & Operations Platform
+Organisation: Animal Disease Control Project, Malappuram, Kerala
+Domain: adcpmalappuram.in
+Design reference: ADCP 360° Brand Identity Board. Treat logos, palette, gradients, typography, imagery and component examples as the controlling visual direction.
+
+ROLE
+Act as a senior product designer and enterprise UX architect designing a production-quality government veterinary administration platform. Create a coherent responsive multi-screen web application UI prototype. This is an integrated operational system, not a marketing website. Prioritise clarity, fast data entry, traceability, readable tables, workflow status and operational dashboards.
+
+PRODUCT CONTEXT
+ADCP 360° centralises administration, inventory, finance, procurement, staff, vehicles, campaigns, vaccination, disease surveillance, sample collection, documents, reporting and digital signatures for ADCP Malappuram.
+Guiding principle: Enter information once. Reuse it everywhere. Connect every department and every transaction. Generate reports automatically.
+Web-first and responsive, with PWA-friendly layouts. Not offline-first.
+Do not invent business rules beyond those defined. For pending rules, show a configurable setting or label “To be configured”.
+
+BRAND SYSTEM
+Use supplied ADCP 360° logo assets and variants. Do not redraw, distort, crop, recolour or invent another logo. Preserve the circular veterinary emblem and clear space. Use app-icon variant for favicon/app tile.
+Palette: deep teal #0E7D7A; turquoise #14B8A6; nature green #84D46B; information blue #3B82F6; alert orange #F59E0B; highlight yellow #FCD34D; background #F0F9FF; surface #E2E8F0; text #475569.
+Primary gradient #14B8A6 to #84D46B. Secondary gradient #3B82F6 to #06B6D4.
+Typography: Plus Jakarta Sans. Bright light backgrounds, restrained shadows, subtle rounded cards, soft borders and clean spacing. Avoid dark-navy dominance.
+Imagery: bright, natural Kerala landscape and healthy animals only where useful. Avoid decorative stock imagery in data-heavy screens.
+Use a consistent modern icon family. Colour must not be the only status indicator; include text labels.
+
+APPLICATION SHELL
+Desktop: collapsible left sidebar with logo, product name and grouped navigation; top bar with breadcrumb, global search, notification bell, help, user avatar/name and role; main content with page title, contextual description and primary action.
+Mobile: collapsible navigation drawer, compact top bar, horizontally scrollable tables or responsive cards, large touch targets.
+Include reusable headers, filter bars, data tables, empty/loading/error states, dialogs, toasts and form validation.
+Use clearly illustrative demo data, not actual live records. Use Indian conventions: ₹, DD/MM/YYYY and Indian number grouping.
+
+NAVIGATION
+Dashboard; Stock & Inventory; Finance & Utilisation Certificate; Purchase & Procurement; Staff Management; Vehicle Management; Office Administration; Document Management; Field Reporting & Form Builder; Campaign Management; Sample Collection Management; Disease Surveillance; Vaccination Reporting & Analysis; Reporting Centre; User & Access Management; Settings & Master Data; Digital Signature Service.
+
+AUTHENTICATION
+Login with email/password, Google sign-in, email OTP verification, forgot password and reset password.
+OTP verification with masked email, code entry and resend state.
+Admin-initiated password reset must not expose existing password and may force reset at next login.
+Google login does not automatically authorise an account.
+
+PROFILE AND MULTI-ROLE SWITCHING
+Top-right profile dropdown: My Profile; Roles (when multiple role assignments exist); Account Settings; Change Password; Logout.
+A single employee may hold multiple role/office assignments, including additional charge. Show role/designation, office/institution or jurisdiction, additional-charge indicator and currently active role. Switching roles keeps the same authenticated session, changes dashboard/modules/data scope based on assigned permissions and records an audit event. Do not create multiple user accounts for additional charges. If only one role exists, omit unnecessary role-switch UI.
+Logout is functional and uses a confirmation dialog.
+
+DASHBOARD
+District dashboard with illustrative KPI cards: active campaigns, vaccination progress, pending completion reports, verification pending, current vaccine stock alerts, near-expiry items, monthly expenditure, pending UC, sample results pending and vehicle allocations due.
+Charts: campaign progress, vaccination by species/vaccine, disease surveillance trend, expenditure by financial head.
+Work queue: pending tasks, approvals, reports to receive and signatures required.
+Alerts: low stock, expiry, vehicle renewals, maintenance/payment reminders.
+Dashboard must respect role and scope.
+
+ORGANISATION AND PERSONNEL
+Organisation list for district/taluk/panchayath/municipality/institution/lab, hierarchy detail and add/edit.
+Personnel list and profile: name, designation, office, Pashudhan ID, status, assignments and history.
+Campaign assignment: person, campaign, squad, local body, role and effective dates. Support multiple assignments where authorised.
+
+INVENTORY
+Inventory dashboard with summaries, low-stock alerts, near-expiry alerts, pending issue notes and recent receipts.
+Item master list/detail: category, unit/conversion, minimum vaccine stock, tracking settings, batch stock and ledger.
+Goods receipt form: source, supplier, date, item, batch, quantity, unit, expiry and attachments.
+Batch management.
+Stock allocation planner: select item/batch, show available quantity, divide among multiple institutions, show allocation total and remaining quantity, record authorised officer and decision date. Allocation does not deduct stock.
+Allocation details with revision history.
+Issue note form. Pending note does not deduct stock.
+Issue note detail with explicit “Completed Supply Successfully” action and confirmation that stock will be deducted only after completion.
+Stock ledger, filters, returns/adjustments with reason/authorisation/audit.
+Near-expiry list: item, category, batch, quantity, expiry, days remaining, storage location.
+Low-stock vaccine alerts using configurable minimum threshold.
+Institution advisory vaccine balance with four separate values: actual district stock, cumulative quantity supplied, estimated institutional balance and institution-reported physical stock. Explicitly label estimate as advisory, not actual stock.
+
+FINANCE AND UC
+Finance dashboard: financial head balances, receipts, expenditure, bank balance, cash in hand, unreconciled entries and UC status.
+Financial heads master.
+Transaction entry: receipt/expenditure/interest/bank charge/refund/adjustment, proceedings number/date, cheque details, encashment date and attachment.
+Payment allocation: one payment split across multiple financial heads, retaining one payment record.
+Head-wise ledger: opening, receipts, expenditure and running balance.
+Bank statement PDF upload and extraction review: extracted date, narration, debit, credit, balance, proposed match, unmatched and mismatch states. User confirms matches; never auto-post extracted entries.
+Bank reconciliation.
+Cash advance: bank withdrawal transferred to cash balance; cash-in-hand under Office Expenses; cash expenses reduce advance balance. Prevent double counting of withdrawal as expenditure.
+Cheque Issue Register exact column order: SL. NO. | BANK | CHQ NO. | DESCRIPTION/FOR | CHEQUE AMOUNT | CHEQUE PAYABLE DATE | REMARKS | PAYMENT STATUS. Include sample status PASSED; cancelled cheques remain, not deleted. Search, filter, print and export.
+Monthly UC preserving official head-wise format, opening, receipts, available, expenditure, closing, total, cash in hand and bank balance. Do not invent official financial head labels or exact UC template if not supplied.
+
+VEHICLE MANAGEMENT
+Vehicle dashboard: availability, today's allocations, upcoming renewals, maintenance due and expenses.
+Vehicle master list/detail.
+Vehicle Diary calendar/list: date, vehicle, place, purpose, requesting/allotted office, officer, driver and remarks.
+Vehicle request: requesting office, requested date/period, destination, purpose and contact/remarks.
+Allocation planner: availability check, overlap warning, decision/approval and allocation.
+Fuel expense: payer categories exactly ADCP Malappuram, DVC, RAHC Nilambur, RAHC Athavanad. Fields date, vehicle, fuel station, fuel type, quantity, amount, payer and bill attachment.
+Maintenance/repair: description, vendor, date, amount, payment date, bill and next maintenance reminder.
+Renewal screen: insurance, tax, permit, pollution certificate, due dates, advance reminders, overdue status and history.
+Vehicle-wise expense and utilisation reports.
+
+CAMPAIGN MANAGEMENT
+Campaign dashboard: status, participating local bodies, squads, imports, completion reports and verification progress.
+Campaign create/edit: name/type, dates, objectives, target population, orders/instructions, areas and sample schedule.
+Squad form: normal Supervisor + Vaccinator + Helper; alternative Supervisor + two Vaccinators and no Helper. Include names/designations and Pashudhan IDs, campaign, taluk, Taluk Coordinator, local body, squad number, days allotted and assigned population.
+Squad list allows multiple squads per local body and multiple assignments for a vaccinator as configured.
+Squad review workflow: draft → Epidemiologist verification → Taluk/Supervisor suggestions → final publication.
+Amendment screen with version history, old/new composition, reason, requester, approver, timestamp and effective date.
+District/Taluk Crisis Management Committee membership.
+Population master by local body and species.
+Population Excel import: download template; upload; year/effective date; Full Update or Partial Update; validate; preview new/updated/error rows; duplicate detection; explicit confirmation; import history. Full Update replaces selected year's dataset only after confirmation. Partial Update changes only supplied species/local-body values.
+Campaign population snapshot.
+Bharath Pashudhan Excel import: upload, validate, map columns, detect duplicates, preview, import history, unallocated record queue.
+Vaccination attribution: campaign + vaccinator Pashudhan ID + village mapped to local body + squad assignment. Ambiguous records require manual resolution; never duplicate.
+Campaign performance dashboard with configurable campaign-specific formulas and thresholds. Mark “To be configured” until set; no universal formula.
+Completion report register: campaign/local body, expected, received/pending, receipt date, receiver, source mode (email/online), uploaded copy and remarks.
+Completion report form captures additional vaccinations not uploaded to Bharath Pashudhan by vaccine/species/count/reason/remarks.
+Verification workflow: Supervisor → Taluk Coordinator → District Coordinator; separate receipt/review/signature states.
+Verification sampling: Taluk Coordinator 5% and District Coordinator 2% of total vaccinations, independently recorded. Include total considered, sample count, selected records, actual verified count, findings, discrepancies and outcome. Sampling/rounding rule configurable/to be confirmed.
+Verification report preview and signature status.
+
+VACCINATION REPORTING
+Dashboard with month, campaign, vaccine, local body and species filters.
+Records list with source and attribution.
+Owned dog and stray dog are separate categories.
+Stray dog entry: date, panchayath/municipality, institution, vaccinator/squad, number of stray dogs, vaccine, quantity used, record reference and remarks.
+Monthly categories: LSD (Goat Pox), Anthrax, H.S. Oil Adjuvant, BQ, Swine Fever, RDF, RDVK & R2B, PPR, Fowl Pox, Duck Pasteurella, Duck Plague, Enterotoxemia, FMD Ring Vaccination, Rabies (Canine), Rabies (Others), Avian Influenza.
+Reports: owned versus stray; local body; monthly and campaign analysis; Excel/PDF.
+
+SAMPLE COLLECTION
+Sample dashboard; configurable 0th-day and later campaign schedules; sample entry with ID/type, animal, institution, local body, campaign, collector and date; dispatch register with laboratory/date/consignment reference; lab result upload; pending dispatch and pending result reports.
+
+DISEASE SURVEILLANCE
+Outbreak dashboard and disease trends.
+Field outbreak entry: institution, location, suspected disease, species, affected population, investigation and status.
+Outbreak detail links multiple samples and lab reports.
+Upload monthly sheets from six diagnostic laboratories. User owns sheets and uploads; automatic Google synchronisation is not needed initially.
+Import validation, mapping, duplicate review and source retention.
+Monthly Panchayath-wise disease report fields: district, local body, species, year/month, disease, outbreaks, susceptible, attacked, deaths, test and laboratory confirmation.
+Monthly Animal Disease Surveillance: serotype, new outbreaks, official vaccination, cases, deaths, destroyed/slaughtered animals, outbreak-response vaccination and preventive/control measures.
+Epidemiologist review and export.
+
+FIELD REPORTING AND FORM BUILDER
+Form builder with text, number, date, dropdown, checkbox, repeatable table and file upload. Configure required fields, validation, assignment, campaign/institution/person scope and reminders. Submission states draft, submitted, incomplete, pending, returned and accepted. Excel/PDF exports and controlled Google Sheets import/export. ADCP 360° database remains authoritative.
+
+DOCUMENTS, WORKFLOW AND DSC
+Document repository with category, reference/date, related module/record, version, uploader, access and signature status.
+Document preview/version history.
+Workflow inbox with pending receipt, review, approval, correction and signature tasks.
+DSC signing screen: document version, signatory, signing status, NICDSign instructions, signed PDF result and verification.
+NICDSign 3.0 on Windows and Linux. Keep PIN/private key local. Server verifies cryptographic signature. Sequential signing supported.
+Completion report signature: Supervisor.
+Verification report signatures: Supervisor → Taluk Coordinator → District Coordinator.
+Show cryptographic verification distinctly from visual signature appearance.
+
+REPORTING CENTRE
+Report catalogue by module; filters for date/FY, campaign, taluk, local body, institution, species, vaccine, financial head and vehicle; report preview with totals/source; Excel/PDF export; preserve official report layouts.
+
+USER AND SETTINGS
+User list, account detail, activation/deactivation and role assignment.
+Permission framework; final matrix will be designed after module finalisation.
+Admin-initiated password reset with audit and force-change option.
+Organisation, personnel, species, item, vaccine, units/conversions, financial heads and notification settings.
+Audit log with filters by user, module, action, record and date.
+
+INTERACTION EXPECTATIONS
+Create coherent navigation between screens, not disconnected mockups. Provide clickable sidebar, tabs, filters, pagination, row actions and dialogs where supported. Include realistic illustrative Malappuram/Kerala sample data, never real personal records. Include empty/loading/error/success/warning/permission-denied states as appropriate. Confirmation dialogs for consequential actions: completing stock supply, publishing squad list, confirming population Full Update, closing UC and submitting signed documents. Tables support search, sort, filters and export. Print-friendly register/report layouts.
+
+Do not add payment gateways. Do not add institution acknowledgement for stock supply. Allocation is not issue. Advisory institution balance is not actual stock. Never double-count portal and additional completion vaccinations. Do not merge owned and stray dog categories. Do not hard-code campaign formulas. Admin cannot view current passwords. Do not put DSC PIN/private key on server. Do not invent financial head names or UC template.
+
+DELIVERABLE
+Create a polished, consistent multi-screen ADCP 360° application prototype with reusable components and clear information architecture. Start with application shell, dashboard, master data, inventory, finance and vehicle management, then campaign and reporting workflows. Maintain brand identity throughout.
